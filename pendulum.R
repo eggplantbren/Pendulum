@@ -17,5 +17,6 @@ for(i in 1:steps)
 }
 
 pdf("plot.pdf")
-plot((1:steps)*dt, keep, type="l", xlab="Time", ylab="Position")
+plot((1:steps)*dt, keep, type="l", xlab="Time", ylab="Position",
+     main="Pendulum Trajectory")
 dev.off()
