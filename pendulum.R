@@ -9,7 +9,7 @@ keep = numeric(steps)
 for(i in 1:steps)
 {
     state["position"] = state["position"] + 0.5*dt*state["velocity"]
-    accel = -sin(state["position"])
+    accel = -sin(state["position"]) + 5*sqrt(dt)*rnorm(1)
     state["velocity"] = state["velocity"] + dt*accel
     state["position"] = state["position"] + 0.5*dt*state["velocity"]
 
