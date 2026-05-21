@@ -16,4 +16,6 @@ for(i in 1:steps)
     keep[i] = state["position"]
 }
 
+pdf("plot.pdf")
 plot((1:steps)*dt, keep, type="l", xlab="Time", ylab="Position")
+dev.off()
