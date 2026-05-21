@@ -8,9 +8,11 @@ steps = floor(time/dt)
 keep = numeric(steps)
 for(i in 1:steps)
 {
+    state["position"] = state["position"] + 0.5*dt*state["velocity"]
     accel = -sin(state["position"])
-    state["position"] = state["position"] + dt*state["velocity"]
     state["velocity"] = state["velocity"] + dt*accel
+    state["position"] = state["position"] + 0.5*dt*state["velocity"]
+
     keep[i] = state["position"]
 }
 
